@@ -1,36 +1,124 @@
-<html>
-  <head>
-    <link rel="stylesheet" href="12g.css">
-  </head>
-  <body>
-    <div class="row">
-      <img class="profile-picture" src="cat.jpg">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Follow List</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  background: #F0F2F5;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.follow-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #FFFFFF;
+  padding: 20px 24px;
+}
+
+.profile-picture {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.info p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.name {
+  font-size: 26px;
+  font-weight: bold;
+  color: #1A1A1A;
+}
+
+.handle {
+  font-size: 22px;
+  color: #888888;
+}
+
+.category {
+  font-size: 20px;
+  color: #888888;
+}
+
+.follow-button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  background: #5B93F2;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 28px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.follow-button:hover {
+  background: #4A82E0;
+}
+</style>
+</head>
+<body>
+
+  <ul class="follow-list">
+    <li class="row">
+      <img class="profile-picture" src="cat.jpg" alt="oliver the cat">
       <div class="info">
         <p class="name">oliver</p>
         <p class="handle">the cat</p>
         <p class="category">Popular</p>
       </div>
-      <button class="follow-button">Follow</button>
-    </div>
+      <button class="follow-button" type="button">Follow</button>
+    </li>
 
-    <div class="row">
-      <img class="profile-picture" src="cat2.jpg">
+    <li class="row">
+      <img class="profile-picture" src="cat2.jpg" alt="Mimi the sleepy cat">
       <div class="info">
         <p class="name">Mimi</p>
         <p class="handle">Sleepy Cat</p>
         <p class="category">Popular</p>
       </div>
-      <button class="follow-button">Follow</button>
-    </div>
+      <button class="follow-button" type="button">Follow</button>
+    </li>
 
-    <div class="row">
-      <img class="profile-picture" src="dog.jpg">
+    <li class="row">
+      <img class="profile-picture" src="dog.jpg" alt="Rex the happy bulldog">
       <div class="info">
         <p class="name">Rex</p>
         <p class="handle">Happy Bulldog</p>
         <p class="category">Popular</p>
       </div>
-      <button class="follow-button">Follow</button>
-    </div>
-  </body>
+      <button class="follow-button" type="button">Follow</button>
+    </li>
+  </ul>
+
+</body>
 </html>

@@ -3,71 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Video List</title>
     <style>
-        *{
-            font-family: Arial, Helvetica, sans-serif;
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
         }
-        img{
-            width: 300px;
-            height: 200px;
-            justify-content: center;
-            display: inline-block;
+
+        body {
+            background: #f9f9f9;
+            margin: 0;
+            padding: 24px;
         }
-        .img{
-            display: inline-block;
-        }
-        .para{
-            display: inline-block;
-            vertical-align: top;
-            margin-top: 0px;
-        }
-        .p1{
-            color: black;
-            font-weight: bold;
-            font-size: 30px;
-        }
-        .p2{
-            color: gray;
-        }
-        .p3{
-            color: gray;
-            font-size: 20px;
-        }
-        .container{
+
+        .container {
+            display: flex;
+            gap: 16px;
             margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 12px;
+            transition: background 0.2s ease;
+            max-width: 700px;
+        }
+
+        .container:hover {
+            background: #efefef;
+            cursor: pointer;
+        }
+
+        .img {
+            flex-shrink: 0;
+        }
+
+        img {
+            width: 300px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .para {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 6px;
+        }
+
+        .p1 {
+            color: #0f0f0f;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 1.3;
+            margin: 0;
+        }
+
+        .p2 {
+            color: #606060;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .p3 {
+            color: #606060;
+            font-size: 13px;
+            margin: 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+            }
+            img {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 16 / 9;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="img">
-            <img src="cat.jpg" alt="">
+            <img src="thumbnail01.jpg" alt="CSS degree comparison thumbnail">
         </div>
         <div class="para">
-            <p class="p1">How to complete against css degree (as a self taught)</p>
+            <p class="p1">How to Compete Against a CSS Degree (as a Self-Taught Dev)</p>
             <p class="p2">Super Simp Dev</p>
-            <p class="p3">5.7k views  11 months</p>
+            <p class="p3">5.7K views · 11 months ago</p>
         </div>
     </div>
     <div class="container">
         <div class="img">
-            <img src="cat.jpg" alt="">
+            <img src="thumbnail02.jpg" alt="CSS degree comparison thumbnail">
         </div>
         <div class="para">
-            <p class="p1">How to complete against css degree (as a self taught)</p>
+            <p class="p1">How to Compete Against a CSS Degree (as a Self-Taught Dev)</p>
             <p class="p2">Super Simp Dev</p>
-            <p class="p3">5.7k views  11 months</p>
+            <p class="p3">5.7K views · 11 months ago</p>
         </div>
     </div>
     <div class="container">
         <div class="img">
-            <img src="cat.jpg" alt="">
+            <img src="thumbnail03.jpg" alt="CSS degree comparison thumbnail">
         </div>
         <div class="para">
-            <p class="p1">How to complete against css degree (as a self taught)</p>
+            <p class="p1">How to Compete Against a CSS Degree (as a Self-Taught Dev)</p>
             <p class="p2">Super Simp Dev</p>
-            <p class="p3">5.7k views  11 months</p>
+            <p class="p3">5.7K views · 11 months ago</p>
         </div>
     </div>
 </body>

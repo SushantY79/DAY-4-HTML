@@ -1,63 +1,184 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Oliver</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oliver</title>
 
-    <style>
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #f4f6fb, #eef1f8);
+        display: flex;
+        justify-content: center;
+        padding: 40px;
+        margin: 0;
+        min-height: 100vh;
+    }
+
+    .container {
+        width: 700px;
+        min-height: 150px;
+        background: #fff;
+        border: 1px solid #ececec;
+        border-radius: 20px;
+        padding: 24px 32px;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+        transition: box-shadow 0.2s ease;
+    }
+
+    .container:hover {
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .img {
+        position: relative;
+        flex-shrink: 0;
+    }
+
+    .img img {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #f0f0f0;
+        display: block;
+    }
+
+    .status-dot {
+        position: absolute;
+        bottom: 6px;
+        right: 6px;
+        width: 18px;
+        height: 18px;
+        background: #34c759;
+        border: 3px solid #fff;
+        border-radius: 50%;
+    }
+
+    .para {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .para p {
+        margin: 0;
+    }
+
+    .name-row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .Oliver {
+        font-size: 26px;
+        font-weight: 700;
+        color: #1a1a1a;
+    }
+
+    .verified {
+        width: 18px;
+        height: 18px;
+        background: #4285e8;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 11px;
+        font-weight: bold;
+    }
+
+    .cat {
+        font-size: 16px;
+        color: #888;
+    }
+
+    .meta-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 6px;
+    }
+
+    .popular {
+        font-size: 13px;
+        font-weight: 600;
+        color: #4285e8;
+        background: #eaf1fd;
+        padding: 4px 10px;
+        border-radius: 20px;
+        width: fit-content;
+    }
+
+    .followers {
+        font-size: 13px;
+        color: #999;
+    }
+
+    .button {
+        flex-shrink: 0;
+    }
+
+    button {
+        background-color: #4285e8;
+        color: white;
+        border: none;
+        padding: 12px 28px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 24px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        min-width: 120px;
+    }
+
+    button:hover {
+        background-color: #2f6fd1;
+    }
+
+    button:active {
+        transform: scale(0.96);
+    }
+
+    button.following {
+        background-color: #fff;
+        color: #444;
+        border: 1.5px solid #ddd;
+    }
+
+    button.following:hover {
+        background-color: #fdeeee;
+        color: #d93025;
+        border-color: #f3c8c8;
+    }
+
+    @media (max-width: 600px) {
         .container {
-            width: 700px;
-            height: 150px;
-            border: 1px solid black;
-            padding: 20px;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+            padding: 24px;
         }
-
-        .img {
-            display: inline-block;
-            vertical-align: middle;
-            width: 180px;
-        }
-
-        .img img {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-        }
-
         .para {
-            display: inline-block;
-            vertical-align: middle;
-            width: 250px;
+            align-items: center;
         }
-
-        .para p {
-            margin: 8px;
+        .name-row, .meta-row {
+            justify-content: center;
         }
-
-        .Oliver {
-            font-size: 30px;
-            font-weight: bold;
-        }
-
-        .cat,
-        .popular {
-            font-size: 25px;
-            color: gray;
-        }
-
-        .button {
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        button {
-            background-color: #4285e8;
-            color: white;
-            border: none;
-            padding: 15px 25px;
-            font-size: 25px;
-            border-radius: 8px;
-        }
-    </style>
+    }
+</style>
 </head>
 
 <body>
@@ -65,20 +186,41 @@
     <div class="container">
 
         <div class="img">
-            <img src="cat.jpg" alt="cat">
+            <img src="cat3.jpg" alt="Oliver the cat">
+            <div class="status-dot"></div>
         </div>
 
         <div class="para">
-            <p class="Oliver">Oliver</p>
+            <div class="name-row">
+                <p class="Oliver">Oliver</p>
+                <span class="verified">✓</span>
+            </div>
             <p class="cat">the cat</p>
-            <p class="popular">Popular</p>
+            <div class="meta-row">
+                <span class="popular">🔥 Popular</span>
+                <span class="followers">12.4K followers</span>
+            </div>
         </div>
 
         <div class="button">
-            <button>Follow</button>
+            <button id="followBtn" onclick="toggleFollow()">Follow</button>
         </div>
 
     </div>
+
+    <script>
+        function toggleFollow() {
+            const btn = document.getElementById('followBtn');
+            const isFollowing = btn.classList.toggle('following');
+            btn.textContent = isFollowing ? 'Following' : 'Follow';
+            btn.onmouseenter = () => {
+                if (isFollowing) btn.textContent = 'Unfollow';
+            };
+            btn.onmouseleave = () => {
+                if (btn.classList.contains('following')) btn.textContent = 'Following';
+            };
+        }
+    </script>
 
 </body>
 </html>

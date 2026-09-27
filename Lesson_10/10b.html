@@ -1,113 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .img{
-            display: inline-block;
-            vertical-align: middle;
-            
-        }
-        img{
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            display: inline-block;
-            vertical-align: middle;
-
-        }
-        p{
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        .para{
-            display: inline-block;
-            vertical-align: middle;
-            margin-left: 20px;
-
-        }
-        .button{
-            display: inline-block;
-            vertical-align: middle;
-            font-family: Arial, Helvetica, sans-serif;
-            margin-left: 300px;
-            
-        }
-        button{
-            background-color: rgb(26, 106, 234);
-            color: white;
-            padding: 10px 10px;
-            font-size: 20px;
-            border: none;
-            border-radius: 4px;
-        }
-        .p1{
-            font-size: 20px;
-            font-weight: bold;
-        }
-        .p2{
-            font-size: 15px;
-            color: gray;
-        }
-        .p3{
-            font-size: 15px;
-            color: gray;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suggested Follows</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+    body { background: #F3F4F6; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 30px 16px; }
+    .panel { width: 480px; background: #FFFFFF; border-radius: 16px; padding: 8px 28px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+    .row { display: flex; align-items: center; gap: 18px; padding: 22px 0; border-bottom: 1px solid #EFEFEF; }
+    .row:last-child { border-bottom: none; }
+    .row img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .info { flex: 1; min-width: 0; }
+    .name { font-size: 18px; font-weight: 700; color: #111; }
+    .sub { font-size: 14.5px; color: #6B7280; margin-top: 2px; }
+    .badge { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; color: #E8890C; margin-top: 6px; }
+    .badge svg { width: 11px; height: 11px; }
+    button { flex-shrink: 0; background: #3B82F6; color: white; border: none; padding: 11px 24px; font-size: 15px; font-weight: 600; border-radius: 10px; cursor: pointer; transition: background 0.15s ease, transform 0.08s ease; }
+    button:hover { background: #2563EB; }
+    button:active { transform: scale(0.96); }
+    button.following { background: #FFFFFF; color: #6B7280; border: 1.5px solid #E5E7EB; }
+    button.following:hover { color: #DC2626; border-color: #FCA5A5; background: #FEF2F2; }
+    @media (max-width: 460px) {
+        .panel { width: 100%; padding: 4px 16px; }
+        .row { gap: 12px; }
+        button { padding: 9px 16px; font-size: 13.5px; }
+    }
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="img">
-            <img src="cat.jpg" alt="">
+
+<div class="panel">
+    <div class="row">
+        <img src="cat.jpg" alt="Oliver">
+        <div class="info">
+            <p class="name">Oliver</p>
+            <p class="sub">the cat</p>
+            <span class="badge">
+                <svg viewBox="0 0 24 24" fill="#E8890C"><path d="M12 2l2.4 6.6L21 10l-5.5 4.3L17 21l-5-3.6L7 21l1.5-6.7L3 10l6.6-1.4z"/></svg>
+                Popular
+            </span>
         </div>
-        <div class="para">
-            <p class="p1">Oliver</p>
-            <p class="p2">The Cat</p>
-            <p class="p3">Popular</p>
-        </div>
-        <div class="button">
-            <button >Follow</button>
-        </div>
+        <button onclick="toggleFollow(this)">Follow</button>
     </div>
-    <div class="container">
-        <div class="img">
-            <img src="cat.jpg" alt="">
+
+    <div class="row">
+        <img src="cat2.jpg" alt="Mimi">
+        <div class="info">
+            <p class="name">Mimi</p>
+            <p class="sub">Sleepy Cat</p>
+            <span class="badge">
+                <svg viewBox="0 0 24 24" fill="#E8890C"><path d="M12 2l2.4 6.6L21 10l-5.5 4.3L17 21l-5-3.6L7 21l1.5-6.7L3 10l6.6-1.4z"/></svg>
+                Popular
+            </span>
         </div>
-        <div class="para">
-            <p class="p1">Oliver</p>
-            <p class="p2">The Cat</p>
-            <p class="p3">Popular</p>
-        </div>
-        <div class="button">
-            <button >Follow</button>
-        </div>
+        <button onclick="toggleFollow(this)">Follow</button>
     </div>
-    <div class="container">
-        <div class="img">
-            <img src="cat.jpg" alt="">
+
+    <div class="row">
+        <img src="cat3.jpg" alt="Rex">
+        <div class="info">
+            <p class="name">Rex</p>
+            <p class="sub">Happy Bulldog</p>
+            <span class="badge">
+                <svg viewBox="0 0 24 24" fill="#E8890C"><path d="M12 2l2.4 6.6L21 10l-5.5 4.3L17 21l-5-3.6L7 21l1.5-6.7L3 10l6.6-1.4z"/></svg>
+                Popular
+            </span>
         </div>
-        <div class="para">
-            <p class="p1">Oliver</p>
-            <p class="p2">The Cat</p>
-            <p class="p3">Popular</p>
-        </div>
-        <div class="button">
-            <button >Follow</button>
-        </div>
+        <button onclick="toggleFollow(this)">Follow</button>
     </div>
-    <div class="container">
-        <div class="img">
-            <img src="cat.jpg" alt="">
-        </div>
-        <div class="para">
-            <p class="p1">Oliver</p>
-            <p class="p2">The Cat</p>
-            <p class="p3">Popular</p>
-        </div>
-        <div class="button">
-            <button >Follow</button>
-        </div>
-    </div>
+</div>
+
+<script>
+    function toggleFollow(btn) {
+        const following = btn.classList.toggle('following');
+        btn.textContent = following ? 'Following' : 'Follow';
+    }
+</script>
+
 </body>
 </html>
